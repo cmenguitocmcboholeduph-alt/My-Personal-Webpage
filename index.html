@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chairien Menguito | My Portfolio</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5fa 0%,
+            #ffe5f0 45%,
+            #f2e7ff 100%
+        );
+
+    color: #4b2442;
+    overflow-x: hidden;
+}
+
+/* ================================
+   DECORATIONS
+================================ */
+
+.bow,
+.kitty,
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.bow {
+    font-size: 55px;
+}
+
+.bow-top {
+    top: 90px;
+    right: 5%;
+    transform: rotate(12deg);
+}
+
+.bow-left {
+    bottom: 8%;
+    left: 3%;
+    transform: rotate(-20deg);
+}
+
+.bow-right {
+    top: 50%;
+    right: 2%;
+    transform: rotate(15deg);
+}
+
+.kitty {
+    font-size: 70px;
+    opacity: 0.12;
+}
+
+.kitty-1 {
+    top: 25%;
+    left: 4%;
+}
+
+.kitty-2 {
+    top: 70%;
+    right: 4%;
+}
+
+.kitty-3 {
+    bottom: 8%;
+    left: 15%;
+}
+
+.sparkle {
+    font-size: 30px;
+    color: #f35aa2;
+
+    animation: sparkle 2s infinite alternate;
+}
+
+.sparkle-1 {
+    top: 30%;
+    right: 10%;
+}
+
+.sparkle-2 {
+    top: 70%;
+    left: 8%;
+}
+
+.sparkle-3 {
+    top: 80%;
+    right: 25%;
+}
+
+@keyframes sparkle {
+
+    from {
+        transform: scale(0.7) rotate(0deg);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: scale(1.3) rotate(20deg);
+        opacity: 1;
+    }
+
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+
+    width: 100%;
+
+    background: blue (255,255,255,0.92);
+
+    backdrop-filter: blur(10px);
+
+    padding: 5px 4%;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    border-bottom: 5px solid #ffc1dc;
+
+    box-shadow:
+        0 4px 15px rgba(180,100,160,0.12);
+
+}
+
+nav a {
+
+    text-decoration: none;
+
+    color: #7a3162;
+
+    font-weight: bold;
+
+    padding: 8px 14px;
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+}
+
+nav a:hover {
+
+    background: blue;
+
+    color: pink;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ================================
+   HOME
+================================ */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 150px 10% 80px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.hero-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hello {
+
+    display: inline-block;
+
+    background: #f9b4d1;
+
+    color: #782c60;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+.hero h1 {
+
+    font-size: 65px;
+
+    color: #c64287;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+
+}
+
+.hero h1 span {
+    color: #9165c9;
+}
+
+.hero p {
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #603854;
+
+    max-width: 600px;
+
+}
+
+.hero-buttons {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.button {
+
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
+}
+
+.primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5fa2,
+            #c980e9
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(200,80,160,0.3);
+
+}
+
+.secondary {
+
+    background: white;
+
+    color: #c64287;
+
+    border: 2px solid #f7b1d0;
+
+}
+
+.button:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+/* ================================
+   PROFILE
+================================ */
+
+.profile-container {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
+
+}
+
+.profile-container::before {
+
+    content: "🎀";
+
+    position: absolute;
+
+    top: -25px;
+
+    right: 8%;
+
+    font-size: 65px;
+
+    z-index: 3;
+
+}
+
+.profile-container::after {
+
+    content: "♡";
+
+    position: absolute;
+
+    bottom: -25px;
+
+    left: 5%;
+
+    font-size: 80px;
+
+    color: #e7a2cc;
+
+}
+
+.profile-image {
+
+    width: 330px;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 40% 40% 45% 45%;
+
+    border: 10px solid white;
+
+    box-shadow:
+
+        0 20px 50px rgba(150,80,130,0.25),
+
+        0 0 0 8px #f8c6dd;
+
+}
+
+
+/* ================================
+   HIDDEN SECTIONS
+================================ */
+
+/*
+   IMPORTANT:
+
+   Lahat ng section ay HIDDEN muna.
+
+   Home lang ang visible sa simula.
+*/
+
+.hidden-section {
+
+    display: none;
+
+}
+
+.hidden-section.show {
+
+    display: block;
+
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+section {
+
+    padding: 90px 10%;
+
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+.section-title h2 {
+
+    font-size: 40px;
+
+    color: #bd4383;
+
+    margin-bottom: 10px;
+
+}
+
+.section-title p {
+
+    color: #7a526c;
+
+    font-size: 16px;
+
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+.about-box {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    background: rgba(255,255,255,0.85);
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(150,80,130,0.12);
+
+    border: 1px solid #ffd2e5;
+
+}
+
+.about-box p {
+
+    line-height: 1.9;
+
+    font-size: 17px;
+
+    text-align: center;
+
+}
+
+
+/* ================================
+   INFORMATION
+================================ */
+
+.info-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap: 25px;
+
+}
+
+.info-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(150,80,130,0.1);
+
+    transition: 0.3s;
+
+}
+
+.info-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.info-card .icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+.info-card h3 {
+
+    color: #b6417c;
+
+    margin-bottom: 10px;
+
+}
+
+.info-card p {
+
+    color: #704d63;
+
+    line-height: 1.6;
+
+}
+
+
+/* ================================
+   EDUCATION
+================================ */
+
+.education-card {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffeaf4,
+            #f5e9ff
+        );
+
+    border-radius: 30px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 35px rgba(150,80,130,0.12);
+
+}
+
+.education-card h3 {
+
+    color: #b6417c;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+}
+
+.education-card p {
+
+    line-height: 1.8;
+
+}
+
+
+/* ================================
+   ACHIEVEMENTS
+================================ */
+
+.achievement-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap: 30px;
+
+}
+
+.achievement-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 30px rgba(150,80,130,0.12);
+
+    transition: 0.3s;
+
+    border: 1px solid #ffd1e5;
+
+}
+
+.achievement-card:hover {
+
+    transform: translateY(-8px) scale(1.02);
+
+}
+
+.achievement-card img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+}
+
+.achievement-content {
+
+    padding: 25px;
+
+}
+
+.achievement-content h3 {
+
+    color: #b6417c;
+
+    margin-bottom: 10px;
+
+}
+
+.achievement-content p {
+
+    color: #755466;
+
+    line-height: 1.6;
+
+}
+
+
+/* ================================
+   HOBBIES
+================================ */
+
+.hobby-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+
+    gap: 25px;
+
+}
+
+.hobby-card {
+
+    background: white;
+
+    padding: 35px 20px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(150,80,130,0.1);
+
+    transition: 0.3s;
+
+}
+
+.hobby-card:hover {
+
+    background: #fff1f8;
+
+    transform:
+        rotate(-1deg)
+        translateY(-6px);
+
+}
+
+.hobby-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+.hobby-card h3 {
+
+    color: #b6417c;
+
+}
+
+
+/* ================================
+   FAVORITES
+================================ */
+
+.favorite-box {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd5e7,
+            #ead8ff
+        );
+
+    padding: 50px;
+
+    border-radius: 35px;
+
+    text-align: center;
+
+}
+
+.favorite-animals {
+
+    font-size: 90px;
+
+    margin: 20px 0;
+
+}
+
+
+/* ================================
+   FACEBOOK
+================================ */
+
+.facebook-section {
+
+    text-align: center;
+
+}
+
+.facebook-box {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 35px rgba(150,80,130,0.12);
+
+}
+
+.facebook-box h2 {
+
+    color: #b6417c;
+
+    margin-bottom: 15px;
+
+}
+
+.facebook-box p {
+
+    margin-bottom: 25px;
+
+    line-height: 1.7;
+
+}
+
+.facebook-button {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5fa2,
+            #b77be8
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.facebook-button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    background:
+        linear-gradient(
+            135deg,
+            #b54a86,
+            #8651b3
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 50px;
+
+}
+
+footer p {
+
+    margin: 8px 0;
+
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 2000;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        rgba(40,20,35,0.85);
+
+    padding: 30px;
+
+}
+
+.modal img {
+
+    display: block;
+
+    max-width: 90%;
+
+    max-height: 85%;
+
+    margin: auto;
+
+    border-radius: 20px;
+
+    margin-top: 5%;
+
+}
+
+.close {
+
+    position: absolute;
+
+    right: 30px;
+
+    top: 20px;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width:800px) {
+
+    .hero {
+
+        padding-top: 180px;
+
+    }
+
+    .hero-container {
+
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        gap: 30px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 42px;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+    .profile-image {
+
+        width: 260px;
+
+        height: 350px;
+
+    }
+
+    section {
+
+        padding: 70px 6%;
+
+    }
+
+    .about-box,
+    .education-card,
+    .facebook-box {
+
+        padding: 30px 20px;
+
+    }
+
+    .section-title h2 {
+
+        font-size: 32px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- DECORATIONS -->
+
+<div class="bow bow-top">🎀</div>
+<div class="bow bow-left">🎀</div>
+<div class="bow bow-right">🎀</div>
+
+<div class="kitty kitty-1">🐱</div>
+<div class="kitty kitty-2">🐱</div>
+<div class="kitty kitty-3">🐱</div>
+
+<div class="sparkle sparkle-1">✦</div>
+<div class="sparkle sparkle-2">✧</div>
+<div class="sparkle sparkle-3">✦</div>
+
+
+<!-- ================================
+     NAVIGATION
+================================ -->
+
+<nav>
+
+<a onclick="showSection('home')">
+🏠 Home
+</a>
+
+<a onclick="showSection('about')">
+💗 About
+</a>
+
+<a onclick="showSection('education')">
+🎓 Education
+</a>
+
+<a onclick="showSection('achievements')">
+🏆 Achievements
+</a>
+
+<a onclick="showSection('hobbies')">
+🎨 Hobbies
+</a>
+
+<a onclick="showSection('favorites')">
+🐱 Favorites
+</a>
+
+<a onclick="showSection('contact')">
+🎀 Find Me
+</a>
+
+</nav>
+
+
+<!-- ================================
+     HOME
+================================ -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+
+<div class="hero-text">
+
+<div class="hello">
+
+🎀 Hello! Welcome to my personal website 🎀
+
+</div>
+
+
+<h1>
+
+Hi, I'm
+
+<span>Chairien</span>
+
+Menguito 💗
+
+</h1>
+
+
+<p>
+
+I am a 23-year-old college student and a proud mother.
+
+I am currently a third-year student taking
+
+<strong>
+Bachelor of Science in Information Systems (BSIS)
+</strong>
+
+at
+
+<strong>
+Carmen Municipal College
+</strong>
+
+in Poblacion, Carmen, Bohol.
+
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a
+class="button primary"
+onclick="showSection('about')"
+>
+
+💗 Get to Know Me
+
+</a>
+
+
+<a
+class="button secondary"
+onclick="showSection('achievements')"
+>
+
+🏆 View My Achievements
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- PROFILE IMAGE -->
+
+<div class="profile-container">
+
+<img
+src="images/profile.jpg"
+alt="Chairien Menguito"
+class="profile-image"
+>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     ABOUT
+================================ -->
+
+<section
+id="about"
+class="hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+💗 About Me
+</h2>
+
+<p>
+A little bit about who I am
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<p>
+
+Hello! My name is
+
+<strong>
+Chairien Menguito
+</strong>.
+
+I am 23 years old and a proud mother of one wonderful 4-year-old son.
+I am currently pursuing my studies in Bachelor of Science in Information Systems. I enjoy learning new things, being creative, and continuously improving my skills.
+As an Information Systems student, I am interested in technology, design, and creating useful digital solutions. I love creating designs and using tools such as Draw.io to develop diagrams and organize ideas.
+Aside from my studies, I am also involved in our family business, which includes a quail farm and pig raising. Through this experience, I have learned the importance of responsibility, patience, hard work, and managing different tasks.
+I am always willing to learn, explore new ideas, and develop my skills both in technology and business. My goal is to continue growing as a student, a mother, and a future Information Systems professional.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     INFORMATION
+================================ -->
+
+<section
+id="information"
+class="hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+🎀 My Information
+</h2>
+
+<p>
+Some important facts about me
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<div class="icon">
+🎂
+</div>
+
+<h3>
+Age
+</h3>
+
+<p>
+23 Years Old
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="icon">
+👩‍👦
+</div>
+
+<h3>
+Family
+</h3>
+
+<p>
+Proud mother of one
+4-year-old son
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="icon">
+🎓
+</div>
+
+<h3>
+College Student
+</h3>
+
+<p>
+3rd Year BSIS Student
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Interest
+</h3>
+
+<p>
+Technology and Design
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     EDUCATION
+================================ -->
+
+<section
+id="education"
+class="hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+🎓 Education
+</h2>
+
+<p>
+My current educational journey
+</p>
+
+</div>
+
+
+<div class="education-card">
+
+<h3>
+Bachelor of Science in Information Systems
+</h3>
+
+<p>
+
+<strong>
+3rd Year College Student
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+📍 Carmen Municipal College
+
+<br>
+
+Poblacion, Carmen, Bohol
+
+</p>
+
+<br>
+
+<p>
+
+As an Information Systems student,
+I continue to develop my knowledge and skills
+in technology, systems, creativity,
+and digital design.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     ACHIEVEMENTS
+================================ -->
+
+<section
+id="achievements"
+class="hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+🏆 My Grade 12 Achievements
+</h2>
+
+<p>
+
+Achievements and certificates that I received
+during Senior High School
+
+</p>
+
+</div>
+
+
+<div class="achievement-grid">
+
+
+<!-- 1 -->
+
+<div class="achievement-card">
+
+<img
+src="images/food-beverage-nc2.jpg"
+alt="Food and Beverage Services NC II"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🏆 Food and Beverage Services NC II
+</h3>
+
+<p>
+
+National Certificate II in
+Food and Beverage Services.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="achievement-card">
+
+<img
+src="images/grade12-honors.jpg"
+alt="With Honors"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🏅 With Honors
+</h3>
+
+<p>
+
+Recognition for outstanding academic
+performance during Grade 12.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="achievement-card">
+
+<img
+src="images/champion.jpg"
+alt="Certificate of Participation"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🥇 Certificate of Participation
+</h3>
+
+<p>
+
+Recognition for achievement and participation
+in a Grade 12 activity.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="achievement-card">
+
+<img
+src="images/competition.jpg"
+alt="Work Immersion Certificate"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🎖️ Certificate of Work Immersion
+</h3>
+
+<p>
+
+Recognition for participation and experience
+during work immersion at Lantaw Native Restaurant.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="achievement-card">
+
+<img
+src="images/IMG_20260827_060131_818.jpg"
+alt="Academic Excellence"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🌟 Academic Excellence
+</h3>
+
+<p>
+
+Recognition for academic excellence
+and hard work.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="achievement-card">
+
+<img
+src="images/immersion.jpg"
+alt="Work Immersion"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+💼 Work Immersion
+</h3>
+
+<p>
+
+Successfully completed my
+work immersion experience.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="achievement-card">
+
+<img
+src="images/diploma.jpg"
+alt="Senior High School Diploma"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🎓 Senior High School Diploma
+</h3>
+
+<p>
+
+Successfully completed the requirements
+for Senior High School.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="achievement-card">
+
+<img
+src="images/graduation.jpg"
+alt="Grade 12 Graduation"
+onclick="openModal(this.src)"
+>
+
+<div class="achievement-content">
+
+<h3>
+🎉 Grade 12 Graduation
+</h3>
+
+<p>
+
+A memorable achievement during my
+Senior High School journey.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     HOBBIES
+================================ -->
+
+<section
+id="hobbies"
+class="hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+🎨 My Hobbies
+</h2>
+
+<p>
+Things that I enjoy doing
+</p>
+
+</div>
+
+
+<div class="hobby-container">
+
+
+<div class="hobby-card">
+
+<div class="hobby-icon">
+🎨
+</div>
+
+<h3>
+Designing
+</h3>
+
+<p>
+I enjoy creating and designing.
+</p>
+
+</div>
+
+
+<div class="hobby-card">
+
+<div class="hobby-icon">
+🖥️
+</div>
+
+<h3>
+Draw.io
+</h3>
+
+<p>
+I enjoy using Draw.io for creating
+diagrams and designs.
+</p>
+
+</div>
+
+
+<div class="hobby-card">
+
+<div class="hobby-icon">
+💡
+</div>
+
+<h3>
+Learning
+</h3>
+
+<p>
+I enjoy learning new skills
+and improving myself.
+</p>
+
+</div>
+
+
+<div class="hobby-card">
+
+<div class="hobby-icon">
+💗
+</div>
+
+<h3>
+Being Creative
+</h3>
+
+<p>
+I enjoy expressing my creativity
+through design.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     FAVORITES
+================================ -->
+
+<section
+id="favorites"
+class="hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+🐾 My Favorite Animals
+</h2>
+
+<p>
+The animals that I love
+</p>
+
+</div>
+
+
+<div class="favorite-box">
+
+<div class="favorite-animals">
+
+🐱 🐶
+
+</div>
+
+
+<h2>
+I Love Cats and Dogs!
+</h2>
+
+<br>
+
+
+<p>
+
+Cats and dogs are my favorite pets and animals.
+
+I love their adorable personalities and
+the happiness they bring to people.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     FACEBOOK
+================================ -->
+
+<section
+id="contact"
+class="facebook-section hidden-section"
+>
+
+<div class="section-title">
+
+<h2>
+🎀 Find Me Online
+</h2>
+
+<p>
+Connect with me through Facebook
+</p>
+
+</div>
+
+
+<div class="facebook-box">
+
+<div
+style="
+font-size:70px;
+margin-bottom:15px;
+"
+>
+
+💗
+
+</div>
+
+
+<h2>
+Find Me on Facebook
+</h2>
+
+
+<p>
+
+You can visit my Facebook profile
+by clicking the button below.
+
+</p>
+
+
+<a
+href="https://www.facebook.com/chairien.menguito.2025"
+target="_blank"
+class="facebook-button"
+>
+
+🎀 Visit My Facebook Profile 🎀
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+<p>
+🎀 Made with Love by Chairien Menguito 🎀
+</p>
+
+<p>
+© 2026 My Personal Webpage
+</p>
+
+<p>
+BSIS 3-D
+</p>
+
+</footer>
+
+
+<!-- ================================
+     IMAGE MODAL
+================================ -->
+
+<div
+id="imageModal"
+class="modal"
+>
+
+<span
+class="close"
+onclick="closeModal()"
+>
+
+&times;
+
+</span>
+
+
+<img
+id="modalImage"
+alt="Certificate Preview"
+>
+
+</div>
+
+
+<!-- ================================
+     JAVASCRIPT
+================================ -->
+
+<script>
+
+
+function showSection(sectionId) {
+
+    const sections =
+        document.querySelectorAll(
+            ".hidden-section"
+        );
+
+
+    sections.forEach(function(section) {
+
+        section.classList.remove("show");
+
+    });
+
+
+    if (sectionId !== "home") {
+
+        const selected =
+            document.getElementById(sectionId);
+
+        if (selected) {
+
+            selected.classList.add("show");
+
+            setTimeout(function() {
+
+                selected.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }, 50);
+
+        }
+
+    }
+
+
+    if (sectionId === "home") {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+function openModal(imageSource) {
+
+    document.getElementById(
+        "imageModal"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "modalImage"
+    ).src = imageSource;
+
+}
+
+
+function closeModal() {
+
+    document.getElementById(
+        "imageModal"
+    ).style.display = "none";
+
+}
+
+
+window.onclick = function(event) {
+
+    const modal =
+        document.getElementById(
+            "imageModal"
+        );
+
+
+    if (event.target === modal) {
+
+        modal.style.display = "none";
+
+    }
+
+};
+
+
+</script>
+
+
+</body>
+</html>
